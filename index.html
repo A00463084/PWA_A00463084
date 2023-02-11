@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>PWA ASSIGNMENT : FRANCIS</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+    <div class="header">
+        <img src="./reminder_icon.jpg" width="75px" />
+        <h1>Activity Reminder : Your Reminder Buddy</h1>
+    </div>
+
+    <div class="sub-header">
+        <img src="./smu-icon-96x96.png" width="75px" />
+        <h3>Francis Alex Kuzhippallil A00463084</h3>
+    </div>
+
+    <hr />
+
+    <div>
+        <form>
+            <label for="rname">Task Name</label>
+            <input type="text" id="rname" name="rname" placeholder="Task name...">
+
+            <br/>
+            <br/>
+
+            <label for="dd">Due Date</label>
+            <input type="date" id="dd" name="dd" placeholder="Date">
+
+            <br/>
+            <br/>
+
+            <label for="as_name">Assigned To</label>
+            <input type="text" id="asname" name="asname" placeholder="Assigned to: name">
+
+            <input type="submit" value="Add Task">
+        </form>
+
+    </div>
+
+    <hr />
+
+    <h1> Reminders List </h1>
+
+    <hr />
+    <br/>
+
+    <div id="todo">
+    </div>
+</body>
+
+<script type="text/javascript">
+    window.onload=function(){
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("dd")[0].setAttribute('min', today);
+    }
+
+</script>
+
+<script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+<script src="/db.js"></script>
+<script src="/script.js"></script>
+
+</html>
